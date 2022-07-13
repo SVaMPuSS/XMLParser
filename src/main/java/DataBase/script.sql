@@ -19,9 +19,9 @@ CREATE DATABASE "DataBase"
 CREATE TABLE IF NOT EXISTS public."D_CAT_CATALOG"
 (
     "ID" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
-    "DELIVERY_DATE" time without time zone,
     "COMPANY" character varying(100) COLLATE pg_catalog."default",
     "UUID" character varying(100) COLLATE pg_catalog."default",
+    "DELIVERY_DATE" date,
     CONSTRAINT "D_CAT_CATALOG_pkey" PRIMARY KEY ("ID")
 )
 WITH (
@@ -32,11 +32,11 @@ TABLESPACE pg_default;
 ALTER TABLE IF EXISTS public."D_CAT_CATALOG"
     OWNER to postgres;
 
--- Table: public.F_CAT_PLANTS 
+-- Table: public.F_CAT_PLANTS
 
--- DROP TABLE IF EXISTS public."F_CAT_PLANTS ";
+-- DROP TABLE IF EXISTS public."F_CAT_PLANTS";
 
-CREATE TABLE IF NOT EXISTS public."F_CAT_PLANTS "
+CREATE TABLE IF NOT EXISTS public."F_CAT_PLANTS"
 (
     "ID" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
     "COMMON" character varying(100) COLLATE pg_catalog."default",
@@ -58,5 +58,5 @@ WITH (
 )
 TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public."F_CAT_PLANTS "
+ALTER TABLE IF EXISTS public."F_CAT_PLANTS"
     OWNER to postgres;
